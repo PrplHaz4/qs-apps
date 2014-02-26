@@ -5,7 +5,7 @@ function EditAppointment(addOrEdit, selfTeacherInfo, apptInfo, teachers, student
     this.addOrEdit = addOrEdit;
     this.selfTeacherInfo = selfTeacherInfo;
     this.apptInfo = apptInfo;
-	
+    
 	this.teachers = teachers;
 	this.students = students;
 	
