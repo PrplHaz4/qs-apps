@@ -1,7 +1,7 @@
 function AppointmentList() {
     this.teachers = [];
     this.teacherMap = new MapClass();
-    
+	
 	this.students = [];
 	this.studentMap = new MapClass();
 	
