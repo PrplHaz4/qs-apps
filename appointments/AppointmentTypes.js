@@ -1,0 +1,1 @@
+var AppointmentTypes = ["Meeting", "Counselling", "Tutoring", "Parental", "Other"];
