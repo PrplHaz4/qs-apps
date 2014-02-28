@@ -98,7 +98,7 @@ AppointmentList.prototype.clickedEditAppt = function(apptInfo) {
 		dialog.setRefreshHandler(this, function() {
 			this.loadApptTable();
 		});
-	} else if(Metis.hasAccess("appt-student-view")) {
+	} else if(Metis.hasAccess("appt-student-view") || Metis.hasAccess("appt-teacher-view")) {
 		var dialog = new EditAppointment("view", this.selfTeacherInfo, apptInfo, this.teachers, this.students, this.teacherMap, this.studentMap);
 		dialog.setRefreshHandler(this, function() {
 			this.loadApptTable();
@@ -155,7 +155,7 @@ AppointmentList.prototype.loadApptTable = function() {
 	if(Metis.hasAccess("appt-admin")) {
 		console.log("Admin View");
 		this.apptTable.renderMetisData(Metis, "Appointments");
-	} else if(Metis.hasAccess("appt-modify-own")) {
+	} else if(Metis.hasAccess("appt-modify-own") || Metis.hasAccess("appt-teacher-view")) {
 		console.log("Teacher View");
 		this.apptTable.renderMetisData(Metis, "Appointments", new EqFilter("teacherId", this.selfTeacherInfo.getData("teacherId")));
 	} else if(Metis.hasAccess("appt-student-view")) {

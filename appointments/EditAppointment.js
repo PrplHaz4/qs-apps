@@ -229,7 +229,7 @@ EditAppointment.prototype.setFieldPermissions = function() {
 	} else if(Metis.hasAccess("appt-modify-own")) {
 		console.log("Teacher View");
 		this.queryFields.getWidget("teachers").setReadOnly();
-	} else if(Metis.hasAccess("appt-student-view")) {
+	} else if(this.addOrEdit == "view" || Metis.hasAccess("appt-student-view") || Metis.hasAccess("appt-teacher-view")) {
 		console.log("Student View");
 		this.queryFields.getWidget("teachers").setReadOnly();
 		this.queryFields.getWidget("date").setReadOnly();
